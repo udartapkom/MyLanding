@@ -5,7 +5,6 @@ const layout = ({
 }>) => {
     return (
         <>
-            <header>Это хедер</header>
             <main>{children}</main>
         </>
     )
