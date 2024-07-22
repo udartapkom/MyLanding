@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Страница four",
+    description: "Некоторая страничка",
+}
 const layout = ({
                     children,
                 }: Readonly<{

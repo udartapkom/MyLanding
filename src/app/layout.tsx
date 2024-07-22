@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "../vendor/_normalize.scss";
 import styles from "./globals.module.scss";
 import Header from "../components/Header/Header";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const ubuntu = Ubuntu(
+    {weight: ["300", "400", "500", "700"],
+            style: ['normal', 'italic'],
+            subsets: ["latin"],
+            variable: "--font-ubuntu"});
 export const metadata: Metadata = {
   title: "Сделано Create Next App",
   description: "сгенерировано by create next app",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={styles.body}>
+      <body className={`${styles.body} ${ubuntu.className}`}>
       <Header />
       {children}
       </body>

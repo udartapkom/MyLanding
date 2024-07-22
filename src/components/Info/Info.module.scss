@@ -1,0 +1,38 @@
+@import "../../globalStyle/variables.scss";
+.info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  &_container {
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_head {
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+  }
+  &_header {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 64px;
+    min-width: 280px;
+    margin-right: 80px;
+  }
+  &_text {
+    font-size: 24px;
+    font-weight: 400;
+    min-width: 750px;
+  }
+}
+.red {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border: $whiteColor 4px solid;
+  cursor: pointer;
+  background: $redGradient;
+}
