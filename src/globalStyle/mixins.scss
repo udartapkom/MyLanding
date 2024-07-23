@@ -1,0 +1,29 @@
+@mixin Header2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 115%;
+}
+@mixin MainText {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+@mixin ButtonText {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+}
+@mixin HeaderMain {
+  font-style: normal;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 115%;
+}
+
+
+@mixin TextStroke {
+  -webkit-text-stroke: 1px rgba(32, 32, 32, 0.5);
+}

@@ -1,8 +1,8 @@
 import styles from "./header.module.scss";
 import Image from "next/image";
-import backImg from "../../../public/backgrounds/fon_dop 2.jpg";
+import backImg from "../../../public/backgrounds/backHeader.jpg";
+import HeaderMenu from "@/components/HeaderMenu/HeaderMenu";
 const Header = () => {
-
     return(
         <header
             className={styles.header}>
@@ -20,7 +20,12 @@ const Header = () => {
                     objectFit: "contain",
                     position: "absolute"}}
             />
-            <p className={styles.Header__text}>Основной хедер</p>
+           <HeaderMenu />
+            <div className={styles.header_headContainer}>
+                <h3 className={styles.header_head}>Закажите</h3>
+                <h3 className={styles.header_headBlue}>лендинг</h3>
+            </div>
+            <p className={styles.header_text}>и получите профессиональный сайт, который повысит узнаваемость вашего бренда и увеличит продажи!</p>
         </header>
     )
 }

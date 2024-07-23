@@ -1,0 +1,18 @@
+@import "../../../globalStyle/variables.scss";
+@import '../../../globalStyle/mixins.scss';
+.button {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: $whiteColor 4px solid;
+  margin-left: 10px;
+  &_text {
+    @include ButtonText;
+  }
+}
+.button:first-of-type {
+  margin-left: 0;
+}

@@ -1,13 +1,31 @@
+@import "../../globalStyle/variables.scss";
+@import '../../globalStyle/mixins.scss';
 .header {
   display: flex;
-  max-height: 490px;
+  flex-direction: column;
+  align-items: end;
   max-width: 1280px;
   position: relative;
-  height: 100%;
   width: 100%;
-/*  background-image: url("../../../public/Header.png");
-  background-size: contain;*/
-}
-.Header__text{
-  color: aliceblue;
+
+  &_headContainer {
+    display: flex;
+    max-width: 450px;
+    width: 100%;
+  }
+  &_head {
+    @include HeaderMain;
+    @include TextStroke;
+  }
+  &_headBlue {
+    @include HeaderMain;
+    @include TextStroke;
+    color: $lightBlue;
+    margin-left: 10px;
+  }
+  &_text {
+    @include MainText;
+    max-width: 450px;
+    margin-top: 25px;
+  }
 }
