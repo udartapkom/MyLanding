@@ -2,6 +2,7 @@ import styles from "./header.module.scss";
 import Image from "next/image";
 import backImg from "../../../public/backgrounds/backHeader.jpg";
 import HeaderMenu from "@/components/HeaderMenu/HeaderMenu";
+import HeaderOrderButton from "@/components/HeaderOrderButton/HeaderOrderButton";
 const Header = () => {
     return(
         <header
@@ -25,7 +26,9 @@ const Header = () => {
                 <h3 className={styles.header_head}>Закажите</h3>
                 <h3 className={styles.header_headBlue}>лендинг</h3>
             </div>
-            <p className={styles.header_text}>и получите профессиональный сайт, который повысит узнаваемость вашего бренда и увеличит продажи!</p>
+            <p className={styles.header_text}>и получите профессиональный сайт,
+                который повысит узнаваемость вашего бренда и увеличит продажи!</p>
+            <HeaderOrderButton />
         </header>
     )
 }

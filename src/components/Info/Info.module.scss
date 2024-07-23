@@ -24,6 +24,48 @@
     @include MainText;
     min-width: 750px;
   }
+  &_what {
+    display: flex;
+    margin-top: 15px;
+    width: 710px;
+    height: 70px;
+  }
+  &_whatHead {
+    @include Header2;
+    line-height: 125%;
+  }
+  &_whatHeadBlue {
+    @include Header2;
+    color: $lightBlue;
+    margin-left: 10px;
+    line-height: 125%;
+  }
+}
+.list {
+  display: flex;
+  margin-top: 40px;
+  &_element {
+    margin-right: 78px;
+    height: 450px;
+  }
+  &_HeaderElement {
+    @include infoBlockBlueText;
+    background: $blueColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    width: 320px;
+    height: 80px;
+  }
+  &_text {
+    @include MainText;
+    padding-left: 10px;
+    margin-top: 20px;
+  }
+  &_element:last-of-type{
+    margin-right: 0;
+  }
 }
 .red {
   width: 200px;

@@ -1,0 +1,13 @@
+@import "../../../globalStyle/variables.scss";
+@import "../../../globalStyle/mixins.scss";
+.orderButton {
+  @include ButtonText;
+  background: $redGradient;
+  border-radius: 35px;
+  border: $whiteColor 4px solid;
+  width: 280px;
+  height: 52px;
+  margin-top: 25px;
+  margin-right: 10px;
+  margin-bottom: 47px;
+}
