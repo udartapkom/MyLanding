@@ -1,4 +1,22 @@
+@import "../../globalStyle/variables.scss";
+@import "../../globalStyle/mixins.scss";
 .actionTime {
+  max-width: 1280px;
+  max-height: 120px;
+  width: 100%;
+  height: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+  background: $redGradient;
+  &_text {
+    @include ActionText;
+    margin-top: 24px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    margin-left: 45px;
+    width: 575px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+  }
 }
