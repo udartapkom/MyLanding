@@ -8,6 +8,9 @@
   margin-top: 20px;
   margin-bottom: 20px;
   background: $redGradient;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   &_text {
     @include ActionText;
     margin-top: 24px;
@@ -19,4 +22,28 @@
     display: flex;
     align-items: center;
   }
+  &_timer {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    max-height: 80px;
+  }
+  &_numbers {
+    @include Header2;
+    display: flex;
+    transition: 1s linear;
+
+  }
+  &_colon {
+    display: flex;
+    align-items: center;
+  }
+}
+.blink {
+  animation: blink 1.5s infinite; /* Параметры анимации */
+}
+@keyframes blink {
+  0% { opacity: 1; /* Непрозрачный текст */ }
+  50% { opacity: 0; /* Прозрачный текст */ }
+  100% { opacity: 1; /* Непрозрачный текст */ }
 }

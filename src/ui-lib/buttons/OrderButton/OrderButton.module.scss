@@ -7,7 +7,12 @@
   border: $whiteColor 4px solid;
   width: 280px;
   height: 52px;
-  margin-top: 25px;
   margin-right: 10px;
-  margin-bottom: 47px;
+  &_withMargin {
+    margin-top: 25px;
+    margin-bottom: 47px;
+  }
+  &_noMargin {
+    margin: 0;
+  }
 }

@@ -6,7 +6,11 @@ const HeaderOrderButton = () => {
         alert('Заказать!')
     }
     return (
-    <OrderButton text={'ЗАКАЗАТЬ'} onClick={HeaderOrderButtonClick} />
+    <OrderButton
+        text={'ЗАКАЗАТЬ'}
+        onClick={HeaderOrderButtonClick}
+        buttonStyle={'withMarginStyle'}
+    />
     )
 }
 export default HeaderOrderButton;
