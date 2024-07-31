@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 10px;
   &_text {
     @include ActionText;
     margin-top: 24px;
@@ -32,7 +33,6 @@
     @include Header2;
     display: flex;
     transition: 1s linear;
-
   }
   &_colon {
     display: flex;
@@ -40,10 +40,11 @@
   }
 }
 .blink {
-  animation: blink 1.5s infinite; /* Параметры анимации */
+  animation: blink 1.5s infinite;
+  line-height: 95%;
 }
 @keyframes blink {
-  0% { opacity: 1; /* Непрозрачный текст */ }
-  50% { opacity: 0; /* Прозрачный текст */ }
-  100% { opacity: 1; /* Непрозрачный текст */ }
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

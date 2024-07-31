@@ -1,0 +1,12 @@
+@import "../../globalStyle/variables.scss";
+@import "../../globalStyle/mixins.scss";
+.RunningRowSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  &_header {
+    @include HeaderMain;
+  }
+}

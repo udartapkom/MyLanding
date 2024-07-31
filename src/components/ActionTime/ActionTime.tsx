@@ -1,13 +1,28 @@
 'use client'
-import React, {useState, useRef, useEffect, SyntheticEvent} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styles from "./ActionTime.module.scss";
 import { OrderButton } from "@/ui-lib/buttons";
-
 const ActionTime = () => {
-    const date = new Date(Date.now())
-    const month = date.getMonth() + 1;
-    const dateNow = date.getDate() + 1;
-    const Ref = useRef(month + '-' + dateNow + '-' + date.getFullYear());
+    const date: Date = new Date(Date.now())
+    let month: number | string = date.getMonth() + 1;
+    let dateNow: number | string = date.getDate();
+    let year: number | string = date.getFullYear();
+    const currentDateNow = () => {
+        if (month.toString().length == 1) {
+            month = '0' + month;
+        }
+        if (dateNow.toString().length == 1) {
+            dateNow = '0' + dateNow;
+        }
+        let dateCurent = month
+            + '-'
+            + dateNow
+            + '-'
+            + year
+            + ' ' + '23' + ':' + '59' + ':' + '59'; // последние часы : минуты : секунды текущего дня.
+        return dateCurent;
+    }
+    const Ref = useRef(currentDateNow());
     const [timer, setTimer] = useState(
         {
         'total': 0,
@@ -15,7 +30,6 @@ const ActionTime = () => {
         'hours': 0,
         'minutes': 0,
         'seconds': 0})
-
     const getTimeRemaning = (endTime: any) => {
         let t = Date.parse(endTime)  - Date.now();
         let seconds = Math.floor( (t/1000) % 60 );
@@ -46,14 +60,13 @@ const ActionTime = () => {
     return (
         <section className={styles.actionTime}>
             <p className={styles.actionTime_text}>
-                Сделай заказ сейчас и получи один дополнительный блок бесплатно!
+                Сделай заказ сейчас и получи один дополнительный блок в подарок!
             </p>
             <div className={styles.actionTime_timer}>{timer.days !== 0
                 &&
                 <h2 className={styles.actionTime_numbers}>{('0' + timer.days).slice(-3)}
                     <span className={styles.actionTime_colon}>д &nbsp;</span></h2>
             }
-
                 <h2 className={styles.actionTime_numbers}>{('0' + timer.hours).slice(-2)}
                     <span className={styles.blink}>:</span>
                 </h2>
