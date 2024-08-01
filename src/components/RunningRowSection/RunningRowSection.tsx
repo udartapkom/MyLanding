@@ -6,8 +6,16 @@ const RunningRowSection = () => {
         <section className={styles.RunningRowSection}>
             <h2 className={styles.RunningRowSection_header}>Применяемые технологии</h2>
             <RunningLine
-                speed={50}
+                speed={100}
                 stopOnHover={true}
+                fontSize={18}
+                direction={'right'}
+            />
+            <RunningLine
+                speed={40}
+                stopOnHover={true}
+                fontSize={18}
+                direction={'left'}
             />
         </section>
     )

@@ -13,7 +13,8 @@
 .text {
   display: flex;
   white-space: nowrap;
-  animation: marquee var(--speedScroll) linear infinite;
+  animation: scroll var(--speedScroll) linear infinite;
+  animation-direction: var(--direction);
 }
 .text span {
   font-size: var(--myFontSize);
@@ -28,7 +29,11 @@
   height: 100%;
   background-image: linear-gradient(to right, transparent, #0e192f);
 }
-@keyframes marquee {
+@keyframes marqueeLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+@keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
