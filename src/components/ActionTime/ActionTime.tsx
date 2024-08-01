@@ -56,7 +56,6 @@ const ActionTime = () => {
     useEffect(() => {
         initializeClock(Ref.current);
     }, []);
-
     return (
         <section className={styles.actionTime}>
             <p className={styles.actionTime_text}>

@@ -1,5 +1,36 @@
 .RunningLine {
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  font-size: var(--myFontSize);
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  &_pause:hover .text{
+    animation-play-state: var(--stopOnHover);
+  }
 }
+.text {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee var(--speedScroll) linear infinite;
+}
+.text span {
+  font-size: var(--myFontSize);
+  margin-right: 25px;
+}
+.RunningLine:before { // уход в тень
+  position: absolute;
+  content: ' ';
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background-image: linear-gradient(to right, transparent, #0e192f);
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 

@@ -5,7 +5,10 @@ const RunningRowSection = () => {
     return (
         <section className={styles.RunningRowSection}>
             <h2 className={styles.RunningRowSection_header}>Применяемые технологии</h2>
-            <RunningLine />
+            <RunningLine
+                speed={50}
+                stopOnHover={true}
+            />
         </section>
     )
 }
