@@ -6,18 +6,27 @@ import {
     RefAttributes,
     FC,
     useState,
-    useEffect, useCallback
+    useEffect,
+    ReactNode,
+    Children
 } from "react";
 import styles from './RunningLine.module.scss';
+
 type IRunningLine = {
     //скорость прокрутки, больше 100 не нужно.
     speed?: number
     //останавливать при наведении курсора
-    stopOnHover: boolean
+    stopOnHover?: boolean
     // размер шрифта
     fontSize?: number
     //напрвление слева направо или справа налево
     direction: string
+    // тень выхода и ухода
+    overlay?: boolean
+    // цвет тени в HEX. Обычно это цвет фона
+    overlayColor?: string
+    // то, что будет крутиться в строке
+    children: ReactNode
 } & RefAttributes<HTMLDivElement>;
 
 const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
@@ -25,7 +34,10 @@ const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
         speed = 50,
         stopOnHover = true,
         fontSize = 24,
-        direction = 'left'
+        direction = 'left',
+        overlay = false,
+        overlayColor = '#ffffff',
+        children
     },ref) {
     const [containerWidth, setContainerWidth] = useState(0);
     const [marqueeWidth, setMarqueeWidth] = useState(0);
@@ -66,42 +78,41 @@ const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
             ['--speedScroll' as string]: `${duration}s`,
             ['--stopOnHover' as string]: stopOnHover ? "paused" : "running",
             ['--direction' as string]: direction === "left" ? "normal" : "reverse",
-        }), [duration, stopOnHover, fontSize, direction]
+
+        }), [
+            duration,
+            stopOnHover,
+            fontSize,
+            direction,
+        ]
     )
+    const overlayProperties = useMemo(() => ({
+        ['--overlayColor' as string]: overlayColor,
+    }), [overlayColor])
 
     return !isMounted ? null :(
         <div
             className={`${styles.RunningLine} ${styles.RunningLine_pause} `}
             ref={containerRef}>
+            {overlay && <div
+                className={styles.overlayStyle}
+                style={overlayProperties}
+            >
+            </div>}
             <div className={styles.text}
                  style={rotatinText}
-                 ref={marqueeRef}>
-                <div>
-                    <span className={styles.RunningLine_element}>элемент прокрутки в диве</span>
-                </div>
-                <span className={styles.RunningLine_element}>Первый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Второй элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Третий элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Четвёртый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Пятый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Шестой элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Седьмой элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Восьмой элемент прокрутки</span>
+                 ref={marqueeRef}
+            >
+                {Children.map(children, (item) => {
+                    return (<div> {item} </div>)
+                })}
             </div>
             <div className={styles.text}
                  style={rotatinText}
                  aria-hidden="true">
-                <div>
-                    <span className={styles.RunningLine_element}>элемент прокрутки в диве</span>
-                </div>
-                <span className={styles.RunningLine_element}>Первый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Второй элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Третий элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Четвёртый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Пятый элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Шестой элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Седьмой элемент прокрутки</span>
-                <span className={styles.RunningLine_element}>Восьмой элемент прокрутки</span>
+                {Children.map(children, (item) => {
+                    return (<div> {item} </div>)
+                })}
             </div>
         </div>
     )

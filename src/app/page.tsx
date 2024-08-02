@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Info />
-      <ActionTime />
       <RunningRowSection />
+      <ActionTime />
     </main>
   );
 }

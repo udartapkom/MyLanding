@@ -6,10 +6,37 @@
   align-items: center;
   position: relative;
   height: 50px;
-  &_pause:hover .text{
+  &_pause:hover .text {
     animation-play-state: var(--stopOnHover);
   }
 }
+.overlayStyle { // уход в тень и выход из тени
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @mixin gradientStyle {
+    background: linear-gradient(to right, var(--overlayColor), rgb(255, 255, 255, 0));
+    }
+    &:after, &:before {
+      @include gradientStyle;
+      position: absolute;
+      content: ' ';
+      width: 50px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      touch-action: none;
+    }
+    &:after {
+      left: 0;
+      top: 0;
+    }
+    &:before {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+  }
 .text {
   display: flex;
   white-space: nowrap;
@@ -19,19 +46,6 @@
 .text span {
   font-size: var(--myFontSize);
   margin-right: 25px;
-}
-.RunningLine:before { // уход в тень
-  position: absolute;
-  content: ' ';
-  right: 0;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  background-image: linear-gradient(to right, transparent, #0e192f);
-}
-@keyframes marqueeLeft {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
 }
 @keyframes scroll {
   0% { transform: translateX(0); }
