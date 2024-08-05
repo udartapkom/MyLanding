@@ -1,7 +1,15 @@
+import {FC, PropsWithChildren, ReactNode} from "react";
 import styles from './RunningCard.module.scss';
-const RunningCard = () => {
+
+interface IRunnigCard extends PropsWithChildren{
+    text?: string
+}
+const RunningCard: FC<IRunnigCard> = ({text, children}) => {
     return (
-        <div className={styles.RunningCard}>Карточка</div>
+        <div className={styles.RunningCard}>
+                {children}
+             <p className={styles.RunningCard_text}>{text}</p>
+        </div>
     )
 }
 export default RunningCard;

@@ -1,6 +1,6 @@
 import styles from "./header.module.scss";
 import Image from "next/image";
-import backImg from "../../../public/backgrounds/backHeader.jpg";
+import backImg from "@public//backgrounds/backHeader.jpg";
 import HeaderMenu from "@/components/HeaderMenu/HeaderMenu";
 import HeaderOrderButton from "@/components/HeaderOrderButton/HeaderOrderButton";
 const Header = () => {

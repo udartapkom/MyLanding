@@ -5,7 +5,8 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  height: 50px;
+  height: 100%;
+  margin-top: 15px;
   &_pause:hover .text {
     animation-play-state: var(--stopOnHover);
   }
@@ -39,9 +40,13 @@
   }
 .text {
   display: flex;
+  align-items: center;
   white-space: nowrap;
   animation: scroll var(--speedScroll) linear infinite;
   animation-direction: var(--direction);
+}
+.Card {
+  margin-left: var(--marginCard);
 }
 .text span {
   font-size: var(--myFontSize);

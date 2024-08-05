@@ -25,6 +25,8 @@ type IRunningLine = {
     overlay?: boolean
     // цвет тени в HEX. Обычно это цвет фона
     overlayColor?: string
+    // расстояние между карточками
+    distanceCards?: number
     // то, что будет крутиться в строке
     children: ReactNode
 } & RefAttributes<HTMLDivElement>;
@@ -37,6 +39,7 @@ const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
         direction = 'left',
         overlay = false,
         overlayColor = '#ffffff',
+        distanceCards=25,
         children
     },ref) {
     const [containerWidth, setContainerWidth] = useState(0);
@@ -89,7 +92,9 @@ const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
     const overlayProperties = useMemo(() => ({
         ['--overlayColor' as string]: overlayColor,
     }), [overlayColor])
-
+    const marginCards = useMemo(() => ({
+        ['--marginCard' as string]: `${distanceCards}px`,
+    }), [distanceCards])
     return !isMounted ? null :(
         <div
             className={`${styles.RunningLine} ${styles.RunningLine_pause} `}
@@ -104,14 +109,14 @@ const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine (
                  ref={marqueeRef}
             >
                 {Children.map(children, (item) => {
-                    return (<div> {item} </div>)
+                    return (<div className={styles.Card} style={marginCards}> {item} </div>)
                 })}
             </div>
             <div className={styles.text}
                  style={rotatinText}
                  aria-hidden="true">
                 {Children.map(children, (item) => {
-                    return (<div> {item} </div>)
+                    return (<div className={styles.Card} style={marginCards}> {item} </div>)
                 })}
             </div>
         </div>
