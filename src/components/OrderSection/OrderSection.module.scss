@@ -1,0 +1,10 @@
+@import "../../globalStyle/variables.scss";
+@import "../../globalStyle/mixins.scss";
+.OrderSection {
+  max-height: 735px;
+  height: 100%;
+  width: 100%;
+  background: $radialGradientColor;
+  border-radius: 15px;
+  display: flex;
+}
