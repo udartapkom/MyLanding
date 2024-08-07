@@ -1,0 +1,13 @@
+@import "../../../globalStyle/variables.scss";
+@import '../../../globalStyle/mixins.scss';
+.FeedbackForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  &_textButton {
+    @include ButtonText;
+    text-shadow: 1px $blueColor;
+  }
+}

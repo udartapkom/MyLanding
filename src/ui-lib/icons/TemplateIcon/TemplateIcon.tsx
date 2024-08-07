@@ -7,14 +7,14 @@ type TTemplateIcon = {
     height?: string | number;
     className?: string;
 };
-
-const TemplateIcon: FC<TTemplateIcon> = ({
-                                             icon,
-                                             alt = 'картинка',
-                                             width = '16',
-                                             height = '16',
-                                             className = '',
-                                         }) => (
+const TemplateIcon: FC<TTemplateIcon> = (
+    {
+        icon,
+        alt = 'картинка',
+        width = '16',
+        height = '16',
+        className = '',
+    }) => (
 
     <img
         className={className}

@@ -1,0 +1,29 @@
+@import "../../../globalStyle/variables.scss";
+@import '../../../globalStyle/mixins.scss';
+.UniversalButton {
+  position: relative;
+  width: 250px;
+  height: 75px;
+  border-radius: 10px;
+  border: $whiteColor 2px solid;
+  background: $blueGradientInputNoDeg;
+  cursor: pointer;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: $blueGradientInput;
+    z-index: -1;
+    opacity: 0;
+    transition: linear .3s;
+  }
+  &:hover::after {
+    transition: linear .3s;
+    opacity: 100;
+  }
+}

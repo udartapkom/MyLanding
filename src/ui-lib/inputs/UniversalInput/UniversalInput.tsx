@@ -1,9 +1,11 @@
 import styles from './UniversalInput.module.scss';
+import snowRed from '@public/any/snowRed 1.svg';
 import {
     ComponentPropsWithoutRef,
     FC,
     ReactElement
    } from "react";
+
 interface IUniversalInput extends ComponentPropsWithoutRef<'input'> {
     type?: string
     placeholder?: string
@@ -11,6 +13,7 @@ interface IUniversalInput extends ComponentPropsWithoutRef<'input'> {
     icon?: ReactElement<FC> | null
     id?: string
     errorMessage?: string | null;
+    isRequired?: boolean
 }
 const UniversalInput: FC<IUniversalInput> = (
     {
@@ -20,20 +23,31 @@ const UniversalInput: FC<IUniversalInput> = (
         icon = null,
         label= '',
         errorMessage = '',
+        isRequired = false,
         ...rest
     }) => (
     <div className={styles.UniversalInput}>
-        <label className={styles.UniversalInput_label} htmlFor={id}>{label}</label>
-         <div className={styles.UniversalInput_container}>
-             <input
+
+        <div className={styles.UniversalInput_container}>
+            {isRequired
+                &&
+                <img
+                    src={snowRed.src}
+                    alt={'Снежинка'}
+                    className={styles.UniversalInput_snow}
+                />
+            }
+            <input
                 className={styles.UniversalInput_input}
                 id={id}
                 placeholder={placeholder}
                 type={type}
+                required={isRequired}
                 {...rest}
-             />
-             {icon && icon}
-         </div>
+            />
+            <label className={styles.UniversalInput_label} htmlFor={id}>{'label'}</label>
+            {icon && icon}
+        </div>
         {errorMessage && <p className={styles.UniversalInput_text}>{errorMessage}</p>}
     </div>
 )

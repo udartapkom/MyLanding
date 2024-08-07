@@ -1,7 +1,7 @@
 import styles from './OrderSection.module.scss';
 import Image from "next/image";
 import orderGirl from '@public/backgrounds/orderGirl.jpg';
-import {UniversalInput} from '@/ui-lib/inputs';
+import {FeedbackForm} from "@/components/Forms";
 const OrderSection = () => {
     return(
         <section className={styles.OrderSection}>
@@ -16,9 +16,7 @@ const OrderSection = () => {
                     height: "auto",
                     }}
             />
-            <UniversalInput
-                placeholder={'Имя'}
-            />
+            <FeedbackForm />
         </section>
     )
 }

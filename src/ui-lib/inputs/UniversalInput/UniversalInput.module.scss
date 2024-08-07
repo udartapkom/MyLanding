@@ -1,17 +1,14 @@
 @import "../../../globalStyle/variables.scss";
 @import "../../../globalStyle/mixins.scss";
 .UniversalInput {
-  margin-right: 70px;
-  margin-left: 70px;
+  margin-bottom: 20px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   &_container {
-    max-width: 450px;
-    max-height: 46px;
-    width: 100%;
-    height: 100%;
+    width: 450px;
+    height: 46px;
+    position: relative;
   }
   &_input {
     width: 100%;
@@ -21,5 +18,23 @@
     border: $whiteColor 2px solid;
     border-radius: 5px;
     background: $blueColor;
+    @include InputText;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    &::placeholder {
+      color: $whiteColor;
+    }
+    &:focus {
+      background: $blueGradientInput;
+    }
+  }
+  &_snow {
+    position: absolute;
+    left: -24px;
+    width: 16px;
+    height: 16px;
   }
 }
