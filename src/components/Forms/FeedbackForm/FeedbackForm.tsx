@@ -6,13 +6,14 @@ import {FormEvent} from "react";
 const FeedbackForm = () => {
     const hanleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        console.log('Форма')
+        alert('Форма')
     }
     return (
         <form
             onSubmit={hanleSubmit}
             className={styles.FeedbackForm}
         >
+            <h2 className={styles.FeedbackForm_head}>Представьтесь, пожалуйста</h2>
             <UniversalInput
                 placeholder={'Ваше имя'}
                 isRequired={true}

@@ -10,4 +10,8 @@
     @include ButtonText;
     text-shadow: 1px $blueColor;
   }
+  &_head {
+    @include ButtonText;
+    margin-bottom: 40px;
+  }
 }
