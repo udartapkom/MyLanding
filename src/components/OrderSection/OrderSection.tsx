@@ -2,8 +2,9 @@ import styles from './OrderSection.module.scss';
 import Image from "next/image";
 import orderGirl from '@public/backgrounds/orderGirl.jpg';
 import {FeedbackForm} from "@/components/Forms";
+
 const OrderSection = () => {
-    return(
+    return (
         <section className={styles.OrderSection}>
             <Image
                 src={orderGirl}
@@ -14,9 +15,9 @@ const OrderSection = () => {
                     borderRadius: '15px',
                     width: "100%",
                     height: "auto",
-                    }}
+                }}
             />
-            <FeedbackForm />
+            <FeedbackForm/>
         </section>
     )
 }

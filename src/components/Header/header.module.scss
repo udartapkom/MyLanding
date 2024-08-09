@@ -3,7 +3,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   max-width: 1280px;
   position: relative;
   width: 100%;
@@ -15,11 +15,9 @@
   }
   &_head {
     @include HeaderMain;
-    @include TextStroke;
   }
   &_headBlue {
     @include HeaderMain;
-    @include TextStroke;
     color: $lightBlue;
     margin-left: 10px;
   }

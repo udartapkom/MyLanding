@@ -18,7 +18,7 @@
     margin-right: 24px;
     margin-bottom: 24px;
     margin-left: 45px;
-    width: 575px;
+    width: 600px;
     height: 75px;
     display: flex;
     align-items: center;
@@ -28,6 +28,8 @@
     align-items: center;
     margin-left: 10px;
     max-height: 80px;
+    max-width: 270px;
+    width: 100%;
   }
   &_numbers {
     @include Header2;

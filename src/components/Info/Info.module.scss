@@ -19,6 +19,8 @@
     @include Header2;
     min-width: 280px;
     margin-right: 80px;
+    display: flex;
+    align-items: center;
   }
   &_text {
     @include MainText;

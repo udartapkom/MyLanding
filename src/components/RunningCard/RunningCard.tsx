@@ -1,6 +1,5 @@
 import {FC, PropsWithChildren, ReactNode} from "react";
 import styles from './RunningCard.module.scss';
-
 interface IRunnigCard extends PropsWithChildren{
     text?: string
 }

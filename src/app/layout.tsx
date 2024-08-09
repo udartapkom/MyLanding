@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
+import { Inter } from "next/font/google";
 import "../vendor/_normalize.scss";
 import styles from "./globals.module.scss";
 import Header from "../components/Header/Header";
+import Loading from "../components/Loading/Loading";
+import {Suspense} from "react";
 
-const ubuntu = Ubuntu(
+const inter = Inter (
     {weight: ["300", "400", "500", "700"],
-            style: ['normal', 'italic'],
+            style: ['normal'],
             subsets: ["latin"],
-            variable: "--font-ubuntu"});
+            variable: "--font-inter"});
 export const metadata: Metadata = {
   title: "Сделано Create Next App",
   description: "сгенерировано by create next app",
@@ -21,9 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${styles.body} ${ubuntu.className}`}>
-      <Header />
-      {children}
+      <body className={`${styles.body} ${inter.className}`}>
+      <Suspense fallback={<Loading />}>
+          <Header />
+          {children}
+      </Suspense>
+
       </body>
     </html>
   );

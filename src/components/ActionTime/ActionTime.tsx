@@ -79,7 +79,7 @@ const ActionTime = () => {
             </div>
             <OrderButton
                 text='ЗАКАЗАТЬ'
-                buttonStyle={'noMarginStyle'}
+
             />
         </section>
     )
