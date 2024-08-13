@@ -17,7 +17,7 @@ const OrderSection = () => {
                     height: "auto",
                 }}
             />
-            <FeedbackForm/>
+            <FeedbackForm />
         </section>
     )
 }

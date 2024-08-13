@@ -15,9 +15,9 @@ const ActionTime = () => {
             dateNow = '0' + dateNow;
         }
         let dateCurent = month
-            + '-'
+            + '/'
             + dateNow
-            + '-'
+            + '/'
             + year
             + ' ' + '23' + ':' + '59' + ':' + '59'; // последние часы : минуты : секунды текущего дня.
         return dateCurent;
@@ -56,6 +56,7 @@ const ActionTime = () => {
     useEffect(() => {
         initializeClock(Ref.current);
     }, []);
+    // console.log(getTimeRemaning(Ref.current))
     return (
         <section className={styles.actionTime}>
             <p className={styles.actionTime_text}>

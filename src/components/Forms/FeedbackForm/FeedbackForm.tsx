@@ -1,8 +1,13 @@
 'use client'
-import styles from './FeedbackForm.module.scss';
-import {UniversalInput} from "@/ui-lib/inputs";
-import {UniversalButton} from "@/ui-lib/buttons";
 import {FormEvent} from "react";
+import {UniversalButton} from "@/ui-lib/buttons";
+import styles from './FeedbackForm.module.scss';
+import {
+    UniversalInput,
+    EmailInput,
+    TelphoneInput
+    } from "@/ui-lib/inputs";
+
 const FeedbackForm = () => {
     const hanleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -18,14 +23,12 @@ const FeedbackForm = () => {
                 placeholder={'Ваше имя'}
                 isRequired={true}
             />
-            <UniversalInput
-                placeholder={'Телефон'}
+            <TelphoneInput
+                id={'telephone'}
                 isRequired={true}
             />
-            <UniversalInput
-                placeholder={'E-mail'}
-                isRequired={false}
-            />
+
+            <EmailInput id={'email'} />
             <UniversalInput
                 placeholder={'Ник Телеграм'}
                 isRequired={false}
