@@ -45,7 +45,7 @@ const UniversalInput: FC<IUniversalInput> = (
                 required={isRequired}
                 {...rest}
             />
-            <label className={styles.UniversalInput_label} htmlFor={id}>{'label'}</label>
+            <label className={styles.UniversalInput_label} htmlFor={id}>{label}</label>
             {icon && icon}
         </div>
         {errorMessage && <p className={styles.UniversalInput_text}>{errorMessage}</p>}

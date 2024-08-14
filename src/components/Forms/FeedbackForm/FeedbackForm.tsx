@@ -2,6 +2,7 @@
 import {FormEvent} from "react";
 import {UniversalButton} from "@/ui-lib/buttons";
 import styles from './FeedbackForm.module.scss';
+import { SnowRedIcon } from "@/ui-lib/icons";
 import {
     UniversalInput,
     EmailInput,
@@ -33,10 +34,15 @@ const FeedbackForm = () => {
                 placeholder={'Ник Телеграм'}
                 isRequired={false}
             />
-
+            <div className={styles.FeedbackForm_descContainer}>
+                <SnowRedIcon />
+                <p className={styles.FeedbackForm_desc}>Поля обязательные для заполнения</p>
+            </div>
+            <h3 className={styles.FeedbackForm_subHeader}>Выберите предпочтительный способ связи:</h3>
             <UniversalButton>
                 <p className={styles.FeedbackForm_textButton}>Отправить</p>
             </UniversalButton>
+            
         </form>
     )
 }

@@ -14,4 +14,17 @@
     @include ButtonText;
     margin-bottom: 40px;
   }
+  &_descContainer {
+    display: flex;
+    width: 450px;
+  }
+  &_desc {
+    @include FormDescriptionNormal;
+    margin-left: 10px;
+    margin-bottom: 24px;
+  }
+  &_subHeader {
+    @include FormDescriptionSubHeader;
+    margin-bottom: 20px;
+  }
 }

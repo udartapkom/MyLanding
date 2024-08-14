@@ -9,6 +9,7 @@ import {
     JSLogo,
     npmLogo
 } from '@public/Logos/RunningLine/index';
+import { snowRed } from '@public//any/index';
 
 import TemplateIcon from "@/ui-lib/icons/TemplateIcon/TemplateIcon";
 import {ReactNode} from "react";
@@ -30,3 +31,5 @@ export const JSIcon = (props: any) => <TemplateIcon
     {...props} icon={JSLogo.src} alt={'JavaScript'} width={96} height={96}/>
 export const NPMIcon = (props: any) => <TemplateIcon
     {...props} icon={npmLogo.src} alt={'node packet manager'} width={96} height={96}/>
+export const SnowRedIcon = (props: any) => <TemplateIcon
+    {...props} icon={snowRed.src} alt={'snow'} width={16} height={16} />
