@@ -22,7 +22,6 @@ const UniversalInput: FC<IUniversalInput> = (
         placeholder= '',
         icon = null,
         label= '',
-        errorMessage = '',
         isRequired = false,
         ...rest
     }) => (
@@ -48,7 +47,6 @@ const UniversalInput: FC<IUniversalInput> = (
             <label className={styles.UniversalInput_label} htmlFor={id}>{label}</label>
             {icon && icon}
         </div>
-        {errorMessage && <p className={styles.UniversalInput_text}>{errorMessage}</p>}
     </div>
 )
 export default UniversalInput;

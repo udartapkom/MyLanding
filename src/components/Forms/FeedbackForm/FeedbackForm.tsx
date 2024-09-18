@@ -1,5 +1,6 @@
-'use client'
+"use client";
 import {FormEvent} from "react";
+import {FormValues, useForm} from "@/utils/useForm";
 import {UniversalButton} from "@/ui-lib/buttons";
 import styles from './FeedbackForm.module.scss';
 import { SnowRedIcon } from "@/ui-lib/icons";
@@ -10,19 +11,28 @@ import {
     } from "@/ui-lib/inputs";
 
 const FeedbackForm = () => {
-    const hanleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
+        const handleSubmitFeedback = () => {
         alert('Форма')
     }
+
+        const { errors, handleBlur, handleSubmit, values } = useForm({
+            initialValues: { email: '', password: '' },
+            onSubmit: handleSubmitFeedback,
+        })
+    console.log(errors);
     return (
         <form
-            onSubmit={hanleSubmit}
+            onSubmit={handleSubmit}
             className={styles.FeedbackForm}
         >
             <h2 className={styles.FeedbackForm_head}>Представьтесь, пожалуйста</h2>
             <UniversalInput
                 placeholder={'Ваше имя'}
                 isRequired={true}
+                name='name'
+                id='name'
+                onBlur={handleBlur}
+                label={errors.name}
             />
             <TelphoneInput
                 id={'telephone'}
