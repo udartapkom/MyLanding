@@ -32,10 +32,9 @@ export const useForm = ({ initialValues, onSubmit }: UseFormProps) => {
   };
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(values);
     onSubmit(values);
   }
-  console.log(values);
+  console.log(errors);
   return {
     values,
     errors,

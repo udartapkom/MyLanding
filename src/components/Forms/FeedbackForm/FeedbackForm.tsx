@@ -14,12 +14,10 @@ const FeedbackForm = () => {
         const handleSubmitFeedback = () => {
         alert('Форма')
     }
-
         const { errors, handleBlur, handleSubmit, values } = useForm({
             initialValues: { email: '', password: '' },
             onSubmit: handleSubmitFeedback,
         })
-    console.log(errors);
     return (
         <form
             onSubmit={handleSubmit}
@@ -37,9 +35,15 @@ const FeedbackForm = () => {
             <TelphoneInput
                 id={'telephone'}
                 isRequired={true}
+                label={errors.name}
             />
-
-            <EmailInput id={'email'} />
+            <UniversalInput
+                type={'email'}
+                id='email'
+                name='email'
+                onBlur={handleBlur}
+                label={errors.email}
+            />
             <UniversalInput
                 placeholder={'Ник Телеграм'}
                 isRequired={false}
