@@ -1,4 +1,4 @@
-'use client'
+    'use client'
 import {FormEvent} from "react";
 import {UniversalButton} from "@/ui-lib/buttons";
 import styles from './FeedbackForm.module.scss';
