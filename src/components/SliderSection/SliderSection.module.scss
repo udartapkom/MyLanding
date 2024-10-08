@@ -1,0 +1,15 @@
+@import "../../globalStyle/variables.scss";
+@import "../../globalStyle/mixins.scss";
+.SliderSection{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: $sliderBackground;
+  border-radius: 15px;
+  height: 150px;
+}
+.Arrow {
+  width: 24px;
+  color: #FF2E00;
+}

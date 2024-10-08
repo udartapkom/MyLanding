@@ -19,7 +19,7 @@ const TelphoneInput: FC<ITelphoneInput> = ({id='telephone', isRequired = true, l
     return (
         <PatternFormat
             format="+7 (###) ###-##-##"
-            allowEmptyFormatting mask="_"
+            allowEmptyFormatting mask="_ "
             customInput={UniversalInput}
             onChange={telHandler}
             label={label}

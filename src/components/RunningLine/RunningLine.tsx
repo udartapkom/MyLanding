@@ -31,7 +31,7 @@ type IRunningLine = {
   children: ReactNode;
 } & RefAttributes<HTMLDivElement>;
 
-const RunningLine: FC<IRunningLine> = forwardRef(function RunningLine(
+const RunningLine: FC<IRunningLine> = forwardRef( function RunningLine(
   {
     speed = 50,
     stopOnHover = true,

@@ -4,11 +4,13 @@ import Info from "@/components/Info/Info";
 import ActionTime from "@/components/ActionTime/ActionTime";
 import RunningRowSection from "@/components/RunningRowSection/RunningRowSection";
 import OrderSection from "@/components/OrderSection/OrderSection";
+import SliderSection from "@/components/SliderSection/SliderSection";
 export default function Home() {
   return (
     <main className={styles.main}>
         <ActionTime />
         <Info />
+        <SliderSection />
         <RunningRowSection />
         <OrderSection />
     </main>
