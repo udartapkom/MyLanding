@@ -1,4 +1,4 @@
-interface iSliders {
+export interface iSliders {
     id: number,
     backgroundColor: string,
     title: string,
