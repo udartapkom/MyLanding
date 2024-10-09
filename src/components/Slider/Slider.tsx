@@ -20,7 +20,7 @@ const Slider = () => {
     }, [slideIndex, slides]);
 
     useEffect(() => {
-        let slider = setInterval(() => setSlideIndex(prevState => prevState + 1), 3000);
+        let slider = setInterval(() => setSlideIndex(prevState => prevState + 1), 5000);
         return () => {
             clearInterval(slider);
         }
@@ -38,7 +38,7 @@ const Slider = () => {
                             if (itemIndex === slideIndex) {
                                 pos = '_activeSlide';
                             }
-                            if (itemIndex === slideIndex - 1 || (slideIndex === 0 && slideIndex === slides.length - 1)) {
+                            if (itemIndex === slideIndex - 1 || (slideIndex === 0 && itemIndex === slides.length - 1)) {
                                 pos = '_lastSlide';
                             }
                             return (
@@ -49,7 +49,6 @@ const Slider = () => {
                         )
                         })
                     }
-
                 </div>
             <BiCaretRight onClick={() => setSlideIndex(prevState => prevState + 1)}/>
         </IconContext.Provider>

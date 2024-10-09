@@ -7,7 +7,7 @@
   background: linear-gradient(104deg, #FF3586 0%, #13B0F3 50.4%, #FF3586 101.34%);
   border-radius: 25px 100px;
   width: 100%;
-  height: 100%;
+  height: 300px;
   overflow: hidden;
 }
 .SlideArticle {
@@ -17,7 +17,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: all .5s linear;
+  transition: all .5s  ease-in-out;
   &_activeSlide {
     opacity: 1;
     transform: translateX(0);
@@ -28,11 +28,7 @@
   &_nextSlide {
     transform: translateX(100%);
   }
-  &_nextSlide:first-of-type {
-    transform: translateX(-100%);
-  }
-
   &_image {
-    width: 150px;
+    width: 250px;
   }
 }
