@@ -5,6 +5,8 @@ import {IconContext} from "react-icons";
 import {iSliders, slides} from "@/data/sliderData";
 import {useEffect, useMemo, useState} from "react";
 import {v4 as uuidv4} from 'uuid';
+import {EllipseSlideIcon} from "@/ui-lib/icons";
+
 
 const Slider = () => {
     const [slide, setSlide] = useState(slides);
@@ -22,7 +24,7 @@ const Slider = () => {
         }
     }, [slideIndex, slides]);
 
-    useEffect(() => {
+   useEffect(() => {
         let slider = setInterval(() => setSlideIndex(prevState => prevState + 1), 5000);
         return () => {
             clearInterval(slider);
@@ -35,7 +37,9 @@ const Slider = () => {
     )
     return(
         <IconContext.Provider value={{style: {width: '36px', height: '36px', zIndex: 1}}}>
+            <div className={styles.Slider_content}>
             <BiCaretLeft onClick={() => setSlideIndex(prevState => prevState - 1)}/>
+                <div className={styles.Slider_info}>
             <div className={styles.Slider} style={sliderBackColor}>
                 {
                     slide.map((item: iSliders, itemIndex: number) => {
@@ -51,7 +55,7 @@ const Slider = () => {
                             <article className={`${styles.SlideArticle} ${styles[`SlideArticle${pos}`]}`} key={id}>
                                 <h3 className={styles.SlideArticle_title}>{title}</h3>
                                 <div className={styles.Slider_container}>
-                                    <img className={styles.SlideArticle_image} src={image}/>
+                                    <img className={styles.SlideArticle_image} src={image} alt='image'/>
                                     <p className={styles.SlideArticle_text}>{text}</p>
                                 </div>
                             </article>
@@ -59,7 +63,20 @@ const Slider = () => {
                     })
                 }
             </div>
+            <div className={styles.Slider_buttons}>
+            {
+                slide.map(() => {
+                    return (
+                        <div className={styles.Slider_button} key={uuidv4()}>
+                            <EllipseSlideIcon />
+                        </div>
+                    )
+                })
+            }
+            </div>
+                </div>
                 <BiCaretRight onClick={() => setSlideIndex(prevState => prevState + 1)}/>
+            </div>
         </IconContext.Provider>
 )
 }

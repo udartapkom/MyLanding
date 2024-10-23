@@ -25,7 +25,7 @@ const FeedbackForm = () => {
         onBlur={handleBlur}
         label={errors.name}
       />
-      <TelphoneInput id={"telephone"} isRequired={true} label={errors.name} />
+      <TelphoneInput id={"telephone"} isRequired={true} />
       <UniversalInput
         type="email"
         id="email"
